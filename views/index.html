@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wisnu Putra</title>
-    <link rel="icon" type="image/x-icon" href="/W logo.png">
+    <link rel="icon" type="image/x-icon" href="public/logo/W logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,34 +16,34 @@
 </head>
 
 <body
-    style="background-image: url(/bground.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; font-family: 'Roboto',sans-serif;">
+    style="background-image: url(public/others/bground.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; font-family: 'Roboto',sans-serif;">
     <div class="container-fluid">
         <div class="container" style="color: white;">
 
             <div class="row m-5 justify-content-center align-items-center">
                 <div class="col-sm-6 d-flex mb-2" style="flex-basis: 60%;">
                     <div class="" style="flex-basis: 50%;  width: 50vw;">
-                        <h1 class="">
+                        <h1 class="" style="font-size: 2.5rem">
                             Hello There 👋 <br>
                             I'm Wisnu!
                         </h1>
 
                         <p class="container-fluid p-2 text-start"
-                            style="flex-basis: 50%;  width: 50vw; font-size: 0.9rem;">
+                            style="flex-basis: 50%;  width: 50vw; font-size: 1.1rem;">
                             I am very passionate in software engineering especially backend with 5+ project successfully
                             build. Have ability to adapt
                             and love to learn new things. Proficient in various programming language, Frameworks,
                             Databases, Tools 🛠, and Cloud Platform ⛅.
                         </p>
                         <a class="btn text" style="border: 1px solid white; color: white; width: 15rem;"
-                            href="/CV_WISNU_PUTRA.pdf" download="">
+                            href="public/document/CV_WISNU_PUTRA.pdf" download="">
                             Download My CV
                         </a>
                         <div class="mt-3 d-flex">
                             <a class="d-flex justify-content-center align-items-center"
                                 style="margin-right: 1rem; text-decoration: none; color: white;" id="github"
                                 href="https://github.com/W-ptra">
-                                <img src="/logo github white.png" alt="github"
+                                <img src="/public/logo/github.png" alt="github"
                                     style="width: 2rem; margin-right: 0.3rem;">
                                 <p class="m-0">
                                     Github
@@ -52,7 +52,7 @@
                             <a class="d-flex justify-content-center align-items-center"
                                 style="text-decoration: none; color: white;" id="linkedin"
                                 href="https://www.linkedin.com/in/wisnu-putra-362b41247/">
-                                <img src="/logo linkedin white.png" alt="github"
+                                <img src="/public/logo/linkedin.png" alt="github"
                                     style="width: 2rem; margin-right: 0.3rem;">
                                 <p class="m-0">
                                     Linkedin
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 d-flex mt-3 align-items-center justify-content-center" style="flex-basis: 40%;">
-                    <img src="/portrait.jpeg" alt="" style="width: 20rem; border-radius: 3rem;">
+                    <img src="/public/others/portrait.jpeg" alt="" style="width: 20rem; border-radius: 3rem;">
                 </div>
             </div>
 
@@ -71,535 +71,71 @@
             </h1>
 
             <section class="m-1.5 d-flex flex-wrap justify-content-center">
+
+                {{ range .portfolio }}
+
                 <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
+                    style="width: 30rem; height: 37rem; background-color: rgba(0, 0, 0, 0.6); border: 1px solid white;">
                     <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem;">
-                        <img src="/helathy.png" class="img-fluid" alt="..."
+                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
+                        <img src="{{ .Thumbnail }}" class="img-fluid" alt="..."
                             style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
                     </div>
                     <div class="card-body d-flex flex-column" style="color: white;">
                         <div class="card-title m-0" style="flex-basis: 25%;">
                             <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                GrabFood Nutri-Score (Helathy)
+                                {{ .Title }}
                             </h5>
                         </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
+                        <div style="flex-basis: 50%; font-size: 0.8rem;">
                             <p class="card-text">
-                                Derived from the issue of health problem caused by food consumption (Heart dieses,
-                                Stroke, Diabetes, and many more), this project propose a solution by creating Nutrition
-                                Grade (A, B, C, D, E) features on GRAB Food. And to be able to get the Nutrition Grade
-                                done, this project harnesses the power of generative AI (Gemini AI) by generating
-                                Nutrition Grade based on food/beverage name and ingredients.
+                                {{ .Description }}
                             </p>
                         </div>
                         <div class="text-center d-flex align-items-center justify-content-center"
                             style="flex-basis: 15%;">
-                            <a href="https://github.com/syahba/newbiers-hackjakarta"
-                                class="btn d-flex align-items-center p-1"
+                            <a href="{{ .Github }}" class="btn d-flex align-items-center p-1"
                                 style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
+                                <img src="/public/logo/github.png" alt="" style="width: 1.5rem; height: 1.5rem;">
                                 <p class="text-center m-0 px-1" style="color: white;">Github</p>
                             </a>
-
-                            <a href="https://www.youtube.com/watch?v=3IcwHSdyxOY"
-                                class="btn d-flex align-items-center p-1"
+                            {{ if .Youtube }}
+                            <a href="{{ .Youtube }}" class="btn d-flex align-items-center p-1"
                                 style="border: 1px solid white; height: 2rem;">
-                                <img src="/logo youtube white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
+                                <img src="public/logo/youtube.png" alt="" style="width: 1.5rem; height: 1.5rem;">
                                 <p class="text-center m-0 px-1" style="color: white;">Watch</p>
                             </a>
+                            {{end}}
 
                         </div>
                         <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
 
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/react logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/postgres logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
+                            {{ range .Skills}}
+                            <img src="/public/logo/{{ . }}.png" alt="" style="width: 1.7rem; margin-right: 0.3rem;">
+                            {{ end }}
                         </div>
                     </div>
                 </div>
 
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem;">
-                        <img src="/safe sight.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                SafeSight
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                Mobile Web Based app created to help visually impaired people to be able detect object
-                                and recognize text from far ahead or area that can't be reach using white cane (upper
-                                body). Utilizing Microsoft Azure feature such as Computer Vision, Translator, and Speech
-                                Service. Everything will conveyed verbally using text to speech.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/SafeSight" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/bootstrap logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem;">
-                        <img src="/second chance.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Second Chance
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                Web based application for ex-convict ("mantan narapinada") to prove they have changes
-                                thru several activity done at the app including doing course, volunteering or community
-                                service, and write a journal. Each activity will give point, which later can be used to
-                                apply for job offer ex: waiter or cooks at restaurant.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/jamesalv/GH5" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-
-                            <a href="https://www.youtube.com/watch?v=81hl69dCEek"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; height: 2rem;">
-                                <img src="/logo youtube white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Watch</p>
-                            </a>
-
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/ejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/mysql logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 14.4rem;">
-                        <img src="/two_fa_go.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Two Factor Authentication
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                Login and Register system integrated with two factor authentication (Password and
-                                Email), where user is required to input the 4 digit OTP code sent by system to their
-                                email which will be expired in 4 minutes. This project using Golang net/http standard
-                                library of version 1.22, PostgreSQL, REDIS, and Resend for email notification.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/Two_Factor_Authentication"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/golang logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/redis logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/postgres logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 16rem;">
-                        <img src="/golang crud api.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Golang CRUD API
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                A Simple RESTFUL API build using golang version 1.22 net/http standard library for
-                                performing Cread, Read, Update, Delete (CRUD) operation. GORM for ORM and PostgreSQL for
-                                database.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/Golang_CRUD_API"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/golang logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/postgres logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 16rem;">
-                        <img src="/Spring boot crud api.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Spring Boot CRUD API
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                A simple RESTful API built with Spring Boot application that performs Create, Read,
-                                Update, and Delete (CRUD) operation on a "Product" table in MySQL database using JDBC
-                                Driver.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/Spring_Boot_CRUD_API"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/java logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/spring boot logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/mysql logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/sea study.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                SEAStudy
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                SEA Study, an all-in-one online learning platform designed to empower learners and
-                                educators alike. Whether you're diving into academics, mastering programming, exploring
-                                culinary arts, or discovering new passions, SEA Study is here to guide you on your
-                                learning journey. Build using Nextjs as frontend, expressjs as backend, and postgresql
-                                as database.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/SeaStudy" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nextjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/postgres logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/GymMe.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                GymMe
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                GymMe is a web-based online health and supplement selling application. Created using C#
-                                and ASP.NET framework with SQL Server database. Implementing Domain-Driven Design (DDD)
-                                approach, this project consisting of 7 layers: Views, Controller, Web Service, Handler,
-                                Factory, Repository, and Model.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/GymMe" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/CSHARP.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/ASP.NET.png" alt="" style="width: 2rem; margin-right: 0.3rem;">
-                            <p class="m-0" style="color: white;">SQLServer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/discord bot.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Hate Speech Censor Discord Bot <br>
-                                Using Text Classification BERT model
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                Discord bot integrated with transformer base model BERT to detect and censor hate
-                                speech, Trained using 726.120 text sample and have peak accuracy of 90,24% with 90,21%
-                                precision.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/hate_speech_censor_discord_bot_using_text_classification_BERT_model"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/python logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/jupyter logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/pytorch logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/discord logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/sea salon.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                SEASalon
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                SEASalon is web based application for beauty salon build using Bootstrap, Javascript,
-                                Node.js, Express.js, MariaDB/MYSQL.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/SEA_Salon" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/ejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/bootstrap logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/mysql logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/wattwise.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Wattwise
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                wattwise is a web-based electricity calculator that can help you calculate the amount of
-                                electricity used in your home, sum the bills by the time (day,week, and month), and
-                                predict how long it will take for your electricity tokens to run out (in day), which
-                                will be visualized using graph.
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/WattWise" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/ejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/bootstrap logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/url shortener.png" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                URL Shortener
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                A simple URL shortener by hashing the original url using md5 then took the first 5
-                                letter and store it on mysql
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/url_shortener" class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/bootstrap logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/mysql logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card m-3"
-                    style="width: 30rem; height: 37rem; background-color: transparent; border: 1px solid white;">
-                    <div class="m-3 d-flex align-items-center justify-content-center"
-                        style="background-color: gray; border-radius: 0.5rem; height: 17.5rem;">
-                        <img src="/appleocalpyse.jpg" class="img-fluid" alt="..."
-                            style="border-radius: 0.5rem; max-height: 17.5rem; width: auto;">
-                    </div>
-                    <div class="card-body d-flex flex-column" style="color: white;">
-                        <div class="card-title m-0" style="flex-basis: 25%;">
-                            <h5 class="m-0 pb-2" style="border-bottom: 1px solid white; font-size: 1.1rem;">
-                                Apple Ocalypse Farm
-                            </h5>
-                        </div>
-                        <div style="flex-basis: 50%; font-size: 0.75rem;">
-                            <p class="card-text">
-                                Simple game about apple tree farming, where it require min of 1 ZETA coin to play, also
-                                you can send coin to other player
-                            </p>
-                        </div>
-                        <div class="text-center d-flex align-items-center justify-content-center"
-                            style="flex-basis: 15%;">
-                            <a href="https://github.com/W-ptra/Apple_ocalypse_Farm"
-                                class="btn d-flex align-items-center p-1"
-                                style="border: 1px solid white; margin-right: 0.5rem; height: 2rem;">
-                                <img src="/logo github white.png" alt="" style="width: 1.5rem; height: 1.5rem;">
-                                <p class="text-center m-0 px-1" style="color: white;">Github</p>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3" style="flex-basis: 10%;">
-                            <img src="/javacript logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/bootstrap logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/nodejs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/expressjs logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                            <img src="/zeta chain logo.png" alt="" style="width: 1.5rem; margin-right: 0.3rem;">
-                        </div>
-                    </div>
-                </div>
-
+                {{ end }}
 
             </section>
         </div>
     </div>
+
+    <footer class="d-flex justify-content-center align-items-center mt-5"
+        style="height: 5rem; background-color: rgba(0, 0, 0, 0.8); border-top: 0.05rem solid white;">
+
+        <a class="d-flex justify-content-center align-items-center"
+            style="margin-right: 1rem; text-decoration: none; color: white;" id="github"
+            href="https://github.com/W-ptra/Golang_Portfolio_Website">
+            <img src="/public/logo/github.png" alt="github" style="width: 1.5rem; margin-right: 0.3rem;">
+            <p class="m-0">
+                Want to make similar portfolio 🤔? Fork mine 🍴!
+            </p>
+        </a>
+    </footer>
+
     <style>
         .btn:hover {
             font-weight: 800;

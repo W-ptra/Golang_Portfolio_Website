@@ -1,0 +1,106 @@
+[
+    {
+        "title":"GrabFood Nutri-Score (Helathy)",
+        "description":"Derived from the issue of health problem caused by food consumption (Heart dieses, Stroke, Diabetes, and many more), this project propose a solution by creating Nutrition Grade (A, B, C, D, E) features on GRAB Food. And to be able to get the Nutrition Grade done, this project harnesses the power of generative AI (Gemini AI) by generating Nutrition Grade based on food/beverage name and ingredients.",
+        "thumbnail":"/public/thumbnail/helathy.png",
+        "github":"https://github.com/syahba/newbiers-hackjakarta",
+        "youtube":"https://www.youtube.com/watch?v=3IcwHSdyxOY",
+        "skills": ["javascript","node","react","express","postgres"]
+    },
+    {
+        "title":"Lyf Guide",
+        "description":"Itinerary generation app build for Lyf hotel by Ascot ltd in web mobile app. We help you by creating a travel trip to nearby restaurant, museum or tourist attraction in Singapore with ease of use by write your preferences. Build using React as frontend, Golang as backend, PostgreSQL for backend, ChatGPT and Google Maps API for itinerary generation.",
+        "thumbnail":"/public/thumbnail/lfyguide.png",
+        "github":"https://github.com/syahba/newbier-hackglobal",
+        "youtube":"",
+        "skills": ["javascript","golang","node","react","postgres","openai"]
+    },
+    {
+        "title":"SafeSight",
+        "description":"Mobile Web Based app created to help visually impaired people to be able detect object and recognize text from far ahead or area that can't be reach using white cane (upper body). Utilizing Microsoft Azure feature such as Computer Vision, Translator, and Speech Service. Everything will conveyed verbally using text to speech.",
+        "thumbnail":"/public/thumbnail/safe sight.png",
+        "github":"https://github.com/W-ptra/SafeSight",
+        "youtube":"",
+        "skills": ["javascript","node","bootstrap","express"]
+    },
+    {
+        "title":"Second Chance",
+        "description":"Web based application for ex-convict ('mantan narapinada') to prove they have changes thru several activity done at the app including doing course, volunteering or community service, and write a journal. Each activity will give point, which later can be used to apply for job offer ex: waiter or cooks at restaurant.",
+        "thumbnail":"/public/thumbnail/second chance.png",
+        "github":"https://github.com/jamesalv/GH5",
+        "youtube":"https://www.youtube.com/watch?v=81hl69dCEek",
+        "skills": ["javascript","node","ejs","express","mysql"]
+    },
+    {
+        "title":"Two Factor Authentication",
+        "description":"Login and Register system integrated with two factor authentication (Password and Email), where user is required to input the 4 digit OTP code sent by system to their email which will be expired in 4 minutes. This project using Golang net/http standard library of version 1.22, PostgreSQL, REDIS, and Resend for email notification.",
+        "thumbnail":"/public/thumbnail/two_fa_go.png",
+        "github":"https://github.com/W-ptra/Two_Factor_Authentication",
+        "youtube":"",
+        "skills": ["golang","redis","postgres"]
+    },
+    {
+        "title":"Spring Boot CRUD API",
+        "description":"A simple RESTful API built with Spring Boot application that performs Create, Read, Update, and Delete (CRUD) operation on a 'Product' table in MySQL database using JDBC Driver.",
+        "thumbnail":"/public/thumbnail/Spring boot crud api.png",
+        "github":"https://github.com/W-ptra/Spring_Boot_CRUD_API",
+        "youtube":"",
+        "skills": ["java","springboot","mysql"]
+    },
+    {
+        "title":"SEAStudy",
+        "description":"SEA Study, an all-in-one online learning platform designed to empower learners and educators alike. Whether you're diving into academics, mastering programming, exploring culinary arts, or discovering new passions, SEA Study is here to guide you on your learning journey. Build using Nextjs as frontend, expressjs as backend, and postgresql as database.",
+        "thumbnail":"/public/thumbnail/sea study.png",
+        "github":"https://github.com/W-ptra/SeaStudy",
+        "youtube":"",
+        "skills": ["javascript","node","next","express","postgres"]
+    },
+    {
+        "title":"GymMe",
+        "description":"GymMe is a web-based online health and supplement selling application. Created using C# and ASP.NET framework with SQL Server database. Implementing Domain-Driven Design (DDD) approach, this project consisting of 7 layers: Views, Controller, Web Service, Handler, Factory, Repository, and Model.",
+        "thumbnail":"/public/thumbnail/GymMe.png",
+        "github":"https://github.com/W-ptra/GymMe",
+        "youtube":"",
+        "skills": ["csharp","asp_net","sqlserver"]
+    },
+    {
+        "title":"Hate Speech Censor Discord Bot Using Text Classification BERT model",
+        "description":"Discord bot integrated with transformer base model BERT to detect and censor hate speech, Trained using 726.120 text sample and have peak accuracy of 90,24% with 90,21% precision.",
+        "thumbnail":"/public/thumbnail/discord bot.png",
+        "github":"https://github.com/W-ptra/hate_speech_censor_discord_bot_using_text_classification_BERT_model",
+        "youtube":"",
+        "skills": ["python","jupyter","torch","discord"]
+    },
+    {
+        "title":"SEASalon",
+        "description":"SEASalon is web based application for beauty salon build using Bootstrap, javascript, Node.js, Express.js, MariaDB/MYSQL.",
+        "thumbnail":"/public/thumbnail/sea salon.png",
+        "github":"https://github.com/W-ptra/SEA_Salon",
+        "youtube":"",
+        "skills": ["javascript","node","ejs","bootstrap","express","mysql"]
+    },
+    {
+        "title":"Wattwise",
+        "description":"wattwise is a web-based electricity calculator that can help you calculate the amount of electricity used in your home, sum the bills by the time (day,week, and month), and predict how long it will take for your electricity tokens to run out (in day), which will be visualized using graph.",
+        "thumbnail":"/public/thumbnail/wattwise.png",
+        "github":"https://github.com/W-ptra/WattWise",
+        "youtube":"",
+        "skills": ["javascript","node","ejs","bootstrap","express"]
+    },
+    {
+        "title":"URL Shortener",
+        "description":"A simple URL shortener by hashing the original url using md5 then took the first 5 letter and store it on mysql",
+        "thumbnail":"/public/thumbnail/url shortener.png",
+        "github":"https://github.com/W-ptra/url_shortener",
+        "youtube":"",
+        "skills": ["javascript","node","bootstrap","express","mysql"]
+    },
+    {
+        "title":"Apple Ocalypse Farm",
+        "description":"Simple game about apple tree farming, where it require min of 1 ZETA coin to play, also you can send coin to other player",
+        "thumbnail":"/public/thumbnail/appleocalpyse.jpg",
+        "github":"https://github.com/W-ptra/Apple_ocalypse_Farm",
+        "youtube":"",
+        "skills": ["javascript","node","bootstrap","express","zetachain"]
+    }
+]

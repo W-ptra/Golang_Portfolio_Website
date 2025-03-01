@@ -21,7 +21,7 @@ func main(){
 	host := os.Getenv("HOST")
 	port := os.Getenv("PORT")
 
-	// establish go fiber condiguration 
+	// establish go fiber configuration 
 	engine := html.New("./views",".html")
 	app := fiber.New(fiber.Config{
 		Views: engine,

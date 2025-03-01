@@ -1,0 +1,31 @@
+.btn:hover {
+    font-weight: 800;
+}
+
+#linkedin:hover,
+#github:hover {
+    font-weight: 800;
+}
+
+.ribbon {
+    cursor: pointer;
+    position: absolute;
+    color: black;
+    top: 35px;
+    right: -40px;
+    padding: 0.5rem;
+    background: #FFDC2B; /* Blue color */
+    transform: rotate(45deg);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    width: 13rem;
+    height: 3.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    text-decoration: inherit;
+}
+
+.ribbon:hover{
+    font-weight: 1000;
+}
